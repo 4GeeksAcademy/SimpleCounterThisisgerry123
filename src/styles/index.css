@@ -4,7 +4,7 @@
 
 .bigCounter div{
 
-    display: inline block;
+    display: inline-block;
     font-size: 60px;
     line-height: 60px;
     background: #101010;

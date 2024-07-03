@@ -1,17 +1,34 @@
+//import react into the bundle
 import React from "react";
-//include images into your bundle
+import SimpleCounter from './SimpleCounter'
+// include your styles into the webpack bundle
 
-//create your first component
-function SimpleCounter(props){
-    return <div className= "Big Counter">
-        <div className=""><i className="fa-regular fa-clock"></i></div>
-        <div className="calendar"></div>
-        <div className="four"></div>
-        <div className="three"></div>
-        <div className="two"></div>
-        <div className="one"></div>
-    </div>
-            
+// import "../styles/index.css";
+// import './icons.js';
+
+function Home(){
+
+
+//import your own components
+//render your react application
+let counter = 0;
+setInterval(function(){
+    const four = Math.floor(counter/1000);
+    const three = Math.floor(counter/100);
+    const two = Math.floor(counter/10);
+    const one = Math.floor(counter/1);
+    console.log(four, three, two, one);
+
+    counter++;
+},1000)
+
+return (<div>
+
+<SimpleCounter digitOne={counter} digitTwo={counter} digitThree={counter} digitFour={counter} />
+ </div>   )
 }
 export default Home;
-ReactDOM.render(<Home/>,document.querySelector('#app'));
+
+    //     <SimpleCounter digitOne={one} digitTwo={two} digitThree={three} digitFour={four} />,
+    //     document.querySelector('#app')
+    // );
